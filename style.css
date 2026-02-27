@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+h1{
+    margin-top: 20px;
+}
+
+.searchrep {
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+}
+
+button {
+     padding: 10px 15px;
+    cursor: pointer;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+}
+.card {
+    background: white;
+    width: 200px;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.results {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    height: fit-content;
+    inset:0;
+    background: rgba(0,0,0,0.7);
+}
+.modal-content {
+     background: white;
+    width: 70%;
+    max-height: 80vh;   
+    overflow-y: auto;   
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+#closeModal {
+    float:  right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.modal-img {
+    width: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.recipe-content {
+    display: flex;
+    gap: 30px;
+    text-align: left;
+}
+
+.ingredients {
+    width: 40%;
+}
+
+.ingredients ul {
+    padding-left: 20px;
+}
+
+.instructions {
+    width: 60%;
+}
+
+.instructions p {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .recipe-content {
+        flex-direction: column;
+    }
+
+    .ingredients,
+    .instructions {
+        width: 100%;
+    }
+}
+
+.yt-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
