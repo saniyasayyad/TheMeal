@@ -40,6 +40,33 @@ async function searchMeals(ingredient) {
     }
 }
 
+// Fetch 10 random meals
+async function getRandomMeals() {
+    resultDiv.innerHTML = "Loading...";
+    const mealPromises = [];
+    
+    // The randomselection.php is premium, so we fetch 10 random meals individually
+    for (let i = 0; i < 10; i++) {
+        mealPromises.push(
+            fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+                .then(res => res.json())
+                .then(data => data.meals[0])
+        );
+    }
+
+    try {
+        const meals = await Promise.all(mealPromises);
+        displayMeals(meals);
+    } catch (error) {
+        resultDiv.innerHTML = "Error while fetching random meals!";
+        console.error(error);
+    }
+}
+
+// Load random meals on startup
+window.addEventListener("DOMContentLoaded", getRandomMeals);
+
+
 // display
 function displayMeals(meals) {
     resultDiv.innerHTML = "";
