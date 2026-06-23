@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import { useDebounce } from '../../hooks/useDebounce'
 
 interface Props {
@@ -10,9 +10,12 @@ export function SearchBar({ onSearch, placeholder = 'Search by ingredient...' }:
   const [value, setValue] = useState('')
   const debounced = useDebounce(value, 400)
 
+  useEffect(() => {
+    onSearch(debounced)
+  }, [debounced]) // eslint-disable-line react-hooks/exhaustive-deps
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
-    onSearch(debounced)
   }
 
   const handleSubmit = (e: React.FormEvent) => {
