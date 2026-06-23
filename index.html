@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Food Recipe Web App</title>
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
+<html>
 
-            <h1>Welcome To Recipe Finder 😋</h1>
-            <div class="searchrep">
-            <input type="text" id="ingredientInput" placeholder="Enter ingredient">
+<head>
+    <title>Food Recipe Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-            <button id="serchBtn">Search</button>
-            </div>
+<body>
 
-            <div id="results" class="results"></div>
+    <h1>Welcome To Recipe Finder 😋</h1>
+    <div class="searchrep">
+        <input type="text" id="ingredientInput" placeholder="Enter ingredient">
 
-            <!-- Result card -->
+        <button id="searchBtn">Search</button>
+    </div>
 
-            <div id="mealModal" class="modal">
-                <div class="modal-content">
-                    <span id="closeModal">&times;</span>
-                    <div id="mealDetail"></div>
-                </div>
-            </div>
+    <div id="results" class="results"></div>
 
-        <script src="script.js"></script>
+    <!-- Result card -->
 
-        </body>
-    </html>
+    <div id="mealModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <div id="mealDetail"></div>
+        </div>
+    </div>
 
+    <script src="script.js"></script>
+
+</body>
+
+</html>
