@@ -20,6 +20,11 @@ import adminRoutes     from './routes/admin.routes'
 
 const app = express()
 
+// Required for express-rate-limit to read the real client IP when running
+// behind a proxy (Vite dev proxy, Nginx, Render, etc.). Must be set before
+// any middleware that reads req.ip.
+app.set('trust proxy', 1)
+
 app.use(helmet())
 app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:5173',

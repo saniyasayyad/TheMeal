@@ -27,8 +27,10 @@ client.interceptors.response.use(
         original.headers.Authorization = `Bearer ${accessToken}`
         return client(original)
       } catch {
+        // Refresh failed — clear token and signal React to update auth state.
+        // Never use window.location.href here: it causes a hard reload (the blink).
         accessToken = ''
-        window.location.href = '/login'
+        window.dispatchEvent(new Event('auth:expired'))
       }
     }
     return Promise.reject(error)
